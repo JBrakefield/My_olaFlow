@@ -1,0 +1,74 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5                                     |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      dynamicMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dynamicFvMesh   dynamicMotionSolverFvMesh;
+
+motionSolverLibs   ("librigidBodyMeshMotion.so");
+
+motionSolver    rigidBodyMotion;
+
+report          on;
+
+solver
+{
+    type Newmark;
+}
+
+accelerationRelaxation 0.5;
+
+bodies
+{
+    flap
+    {
+        type            rigidBody;
+        parent          root;
+
+        centreOfMass    (0 0 0.05475);
+        mass            10.77;
+        inertia         (999 0 0 0.1161 0 999);
+        transform       (1 0 0 0 1 0 0 0 1) (0 0 0);
+
+        joint
+        {
+            type    Ry;//changed
+        }
+
+        patches         (flap);
+        innerDistance   1;
+        outerDistance   1.01;
+    }
+}
+
+restraints
+{
+    /*translationDamper
+    {
+        type linearDamper;
+        body hull;
+        coeff 8596;
+    }
+
+    rotationDamper
+    {
+        type sphericalAngularDamper;
+        body hull;
+        coeff 11586;
+    }*/
+}
+
+
+// ************************************************************************* //

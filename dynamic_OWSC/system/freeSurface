@@ -1,0 +1,23 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  plus                                  |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+freeSurface
+{
+    type            interfaceHeight;
+    libs            ("libfieldFunctionObjects.so");
+    outputControl   timeStep; 
+    outputInterval  1; 
+    locations
+	(
+	(-0.06  0.00  0.00)
+	);
+    alpha           alpha.water;
+} 
+
+// ************************************************************************* //
+
