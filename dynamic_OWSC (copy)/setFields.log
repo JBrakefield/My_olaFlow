@@ -1,0 +1,40 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.x                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 5.x-197d9d3bf20a
+Exec   : setFields
+Date   : Jan 07 2019
+Time   : 14:14:16
+Host   : "MM-M235-D1"
+PID    : 7257
+I/O    : uncollated
+Case   : /home/jbrakefi/OpenFOAM/olaFlow/My_olaFlow/dynamic_OWSC
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Reading setFieldsDict
+
+Setting field default values
+    Setting internal values of volScalarField alpha.water
+AMI: Creating addressing and weights between 1024 source faces and 1040 target faces
+AMI: Patch source sum(weights) min/max/average = 0.999998, 1.00031, 1.00004
+AMI: Patch target sum(weights) min/max/average = 0.999998, 1.00027, 1.00004
+    Setting internal values of volScalarField porosityIndex
+
+Setting field region values
+    Adding cells with center within boxes 1((-100 -100 -100) (100 100 0.536))
+    Setting internal values of volScalarField alpha.water
+
+End
+

@@ -1,0 +1,60 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.x                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 5.x-197d9d3bf20a
+Exec   : createPatch -overwrite
+Date   : Jan 07 2019
+Time   : 14:14:15
+Host   : "MM-M235-D1"
+PID    : 7254
+I/O    : uncollated
+Case   : /home/jbrakefi/OpenFOAM/olaFlow/My_olaFlow/dynamic_OWSC
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Reading createPatchDict
+
+Adding new patch AMI1 as patch 8 from 
+{
+    type            cyclicAMI;
+    matchTolerance  0.0001;
+    neighbourPatch  AMI2;
+    transform       noOrdering;
+}
+
+Adding new patch AMI2 as patch 9 from 
+{
+    type            cyclicAMI;
+    matchTolerance  0.0001;
+    neighbourPatch  AMI1;
+    transform       noOrdering;
+}
+
+
+Moving faces from patch cylinder to patch 8
+Moving faces from patch cylinder_slave to patch 9
+
+Doing topology modification to order faces.
+
+Not synchronising points.
+
+Removing patches with no faces in them.
+
+Removing zero-sized patch cylinder type patch at position 6
+Removing zero-sized patch cylinder_slave type patch at position 7
+Removing patches.
+Writing repatched mesh to 0
+
+End
+

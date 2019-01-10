@@ -1,0 +1,43 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.x                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 5.x-197d9d3bf20a
+Exec   : renumberMesh -overwrite
+Date   : Jan 07 2019
+Time   : 14:14:15
+Host   : "MM-M235-D1"
+PID    : 7253
+I/O    : uncollated
+Case   : /home/jbrakefi/OpenFOAM/olaFlow/My_olaFlow/dynamic_OWSC
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Mesh size: 12160
+Before renumbering :
+    band           : 11269
+    profile        : 3.18846e+07
+
+Using default renumberMethod.
+
+Selecting renumberMethod CuthillMcKee
+
+
+After renumbering :
+    band           : 170
+    profile        : 1.09603e+06
+
+Writing mesh to "constant"
+
+End
+

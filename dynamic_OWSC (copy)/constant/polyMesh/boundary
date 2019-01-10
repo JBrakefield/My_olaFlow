@@ -1,0 +1,81 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.x                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+8
+(
+    inlet
+    {
+        type            patch;
+        nFaces          15;
+        startFace       30582;
+    }
+    outlet
+    {
+        type            patch;
+        nFaces          15;
+        startFace       30597;
+    }
+    wall1
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          170;
+        startFace       30612;
+    }
+    atmosphere
+    {
+        type            patch;
+        nFaces          140;
+        startFace       30782;
+    }
+    defaultFaces
+    {
+        type            empty;
+        inGroups        1(empty);
+        nFaces          11016;
+        startFace       30922;
+    }
+    flap
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          368;
+        startFace       41938;
+    }
+    AMI1
+    {
+        type            cyclicAMI;
+        inGroups        1(cyclicAMI);
+        nFaces          1024;
+        startFace       42306;
+        matchTolerance  0.0001;
+        transform       noOrdering;
+        neighbourPatch  AMI2;
+    }
+    AMI2
+    {
+        type            cyclicAMI;
+        inGroups        1(cyclicAMI);
+        nFaces          1040;
+        startFace       43330;
+        matchTolerance  0.0001;
+        transform       noOrdering;
+        neighbourPatch  AMI1;
+    }
+)
+
+// ************************************************************************* //
